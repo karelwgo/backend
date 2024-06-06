@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('Hogares', function (Blueprint $table) {
             $table->id();
-            $table-> string('nombre',255);
-            $table-> string('nivel_socioeconomico',255);
-            $table-> string('proveedor_internet',255);
-            $table-> decimal('latidud',19,15);
-            $table-> decimal('longitud',19,15);
-            $table-> boolean('raspberry_asignada');
+            $table->string('nombre', 255);
+            $table->string('nivel_socioeconomico', 255);
+            $table->string('proveedor_internet', 255);
+            $table->decimal('latitud', 19, 15);
+            $table->decimal('longitud', 19, 15);
+            $table->boolean('raspberry_asignada');
             $table->timestamps();
         });
     }
