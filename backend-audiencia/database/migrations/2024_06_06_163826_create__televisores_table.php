@@ -12,7 +12,7 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('Televisores', function (Blueprint $table) {
+        Schema::create('Televisor', function (Blueprint $table) {
             $table->id(); 
             $table->unsignedBigInteger('id_hogar'); 
             $table->string('tamano', 20); 
@@ -20,9 +20,8 @@ return new class extends Migration {
             $table->string('resolucion', 20); 
             $table->string('esp32MAC', 255); 
             $table->enum('estado', ['apagado', 'encendido']);
-
             $table->foreign('id_hogar')->references('id')->on('Hogares')->onDelete('cascade');
-            $table->timestamps(); 
+             
         });
     }
 
@@ -33,6 +32,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('Televisores');
+        Schema::dropIfExists('Televisor');
     }
 };

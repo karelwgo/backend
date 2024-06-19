@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('user', 255); 
             $table->string('password', 255); 
             $table->boolean('idAdmin'); 
-            $table->timestamps(); 
+             
         });
     }
 

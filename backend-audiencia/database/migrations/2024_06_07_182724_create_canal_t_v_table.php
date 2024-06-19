@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Hogares', function (Blueprint $table) {
+        Schema::create('canalTV', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 255);
-            $table->string('nivel_socioeconomico', 255);
-            $table->string('proveedor_internet', 255);
-            $table->decimal('latitud', 19, 15);
-            $table->decimal('longitud', 19, 15);
-            $table->boolean('raspberry_asignada');
+            $table->string('nombre_canal',255);
+            $table->integer('numero_canal');
             
         });
     }
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Hogares');
+        Schema::dropIfExists('canalTV');
     }
 };

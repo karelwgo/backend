@@ -3,17 +3,19 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+use App\Http\Controllers\ActividadDispositivoController;
+use App\Http\Controllers\ActividadTelevisorController;
+use App\Http\Controllers\ActividadUsuarioController;
+use App\Http\Controllers\AdministradoresController;
+use App\Http\Controllers\CanalTVController;
+use App\Http\Controllers\DispositivoController;
+use App\Http\Controllers\HogarController;
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::apiResource('actividad-dispositivo', ActividadDispositivoController::class);
+Route::apiResource('actividad-televisor', ActividadTelevisorController::class);
+Route::apiResource('actividad-usuario', ActividadUsuarioController::class);
+Route::apiResource('administradores', AdministradoresController::class);
+Route::apiResource('Canal-TV', CanalTVController::class);
+Route::apiResource('dispositivo',DispositivoController::class);
+Route::apiResource('hogares',HogarController::class);

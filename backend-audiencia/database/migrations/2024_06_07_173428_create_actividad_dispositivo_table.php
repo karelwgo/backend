@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Hogares', function (Blueprint $table) {
+        Schema::create('actividad_dispositivo', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 255);
-            $table->string('nivel_socioeconomico', 255);
-            $table->string('proveedor_internet', 255);
-            $table->decimal('latitud', 19, 15);
-            $table->decimal('longitud', 19, 15);
-            $table->boolean('raspberry_asignada');
+            $table->unsignedBigInteger('id_dispositivo');
+            $table->foreign('id_dispositivo')->references('id')->on('dispositivo')->onDelete('cascade');
+            $table->string('nombre_pagina',255);
+            $table->timestamp('fecha_hora');
+            $table->integer('id_raspberry');
             
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Hogares');
+        Schema::dropIfExists('actividad_dispositivo');
     }
 };
